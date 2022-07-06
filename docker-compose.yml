@@ -7,6 +7,14 @@ services:
         volumes:
             - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
             - ./app:/app
+
+    # apache: 
+    #     image: httpd:latest
+    #     container_name: my-apache-app
+    #     ports:
+    #         - "80:80"
+    #     volumes:
+    #         - ${PWD}/website:/urs/local/apache2/htdocs
             
     php:
         build:
@@ -15,9 +23,9 @@ services:
         volumes:
             - ./app:/app
 
-
     mysql_data:
         image: mysql:latest
+        container_name: mysql_db
         command: --default-authentication-plugin=mysql_native_password
         restart: always
         environment:

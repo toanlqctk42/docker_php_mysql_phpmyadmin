@@ -8,7 +8,7 @@ if($conn->connect_error)
 
 // $query = "Call proc_insert_user(N'hello world')";
 // $query = "delete from user where username = 'trollteam'";
-$conn->query($query);
+// $conn->query($query);
 
 $sql ="select * from user";
 
